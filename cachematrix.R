@@ -1,6 +1,6 @@
 ## Matrix inversion is usually a costly computation and there may be some benefit to caching the inverse of a matrix rather than computing it repeatedly
 
-## This function return the list containing the functions and the matrix in it's environment
+## This function return the list containing the functions and the matrix is there in the environment
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
         inverse <<- NULL
     }
     get <- function() x # return the matrix
-    setinverse <- function(val) inverse <<- val # stores the val passed to the inverse
+    setinverse <- function(val) inverse <<- val # stores the val passed to the function
     getinverse <- function() inverse # return inverse
     list(get = get, set = set, getinverse = getinverse, setinverse = setinverse)
 }
